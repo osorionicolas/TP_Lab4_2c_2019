@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "target": "buenaSonrisa",
+    "public": "dist/buena-sonrisa",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

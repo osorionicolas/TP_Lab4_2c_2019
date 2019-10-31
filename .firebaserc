@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "fir-a3bba"
+  },
+  "targets": {
+    "fir-a3bba": {
+      "hosting": {
+        "buenaSonrisa": [
+          "buenasonrisa"
+        ]
+      }
+    }
+  }
+}

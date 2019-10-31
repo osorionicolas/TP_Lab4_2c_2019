@@ -1,0 +1,118 @@
+<section class="h-100 registro-pagina">
+  <div class="container h-100">
+    <div class="row justify-content-md-center h-100">
+      <div class="card-wrapper registro-pagina">
+        <button (click)="crearTest()" class="btn btn-primary btn-block">
+          Test
+        </button>
+        <div class="brand">
+          <img src="/assets/imagenes/logo.jpg">
+        </div>
+        <div class="card fat">
+          <div class="card-body">
+            <h4 class="card-title">Creá tu cuenta</h4>
+            <form (ngSubmit)="f.form.valid && acepTYC.valid && Registrarse()" #f="ngForm" novalidate>
+
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" name="name" id="name" [(ngModel)]="nombreModel" #name="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required autofocus>
+                <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+                  <div *ngIf="name.errors.required">Nombre requerido</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Dirección de Email</label>
+                <input type="email" class="form-control" name="email" id="email" [(ngModel)]="emailModel"
+                  #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required>
+                <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                  <div *ngIf="email.errors.required">Email requerido</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" class="form-control" name="password" id="password" [(ngModel)]="passwordModel"
+                  #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required>
+                <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                  <div *ngIf="password.errors.required">Contraseña requerida</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="perfil">Perfil</label>
+                <select class="form-control" name="perfil" id="perfil" (change)="changePerfil($event.target.value)">
+                  <option value="Cliente">Cliente</option>
+                  <option value="Recepcionista">Recepcionista</option>
+                  <option value="Especialista">Especialista</option>
+                  <option value="Administrador">Administrador</option>
+                </select>
+              </div>
+
+              <div class="form-group" *ngIf="perfil == 'Especialista'">
+                <label for="especialidad">Especialidad</label>
+                <select class="form-control" name="especialidad" id="especialidad">
+                  <option [ngValue]="Oncologia">Oncología</option>
+                  <option [ngValue]="Dermatologia">Dermatología</option>
+                  <option [ngValue]="Odontologia">Odontología</option>
+                  <option [ngValue]="Psicologia">Psicología</option>
+                </select>
+              </div>
+
+              <!-- carga de imágen -->
+
+              <form class="form-group">
+                <label for="customFile">Imágen</label>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="customFile" accept=".png, .jpg"
+                    (change)="ImagenCargada($event)">
+                  <label class="custom-file-label" for="customFile">{{imgName}}</label>
+                </div>
+              </form>
+
+              <input #imgUsuario type="hidden" [value]="urlImagen | async">
+
+              <!-- *************** -->
+
+              <form class="margin-bottom">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck" name="customCheck"
+                    [(ngModel)]="accepted" #acepTYC="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && acepTYC.invalid }" required>
+                  <label class="custom-control-label" for="customCheck">Acepto los términos y
+                    condiciones</label>
+                </div>
+              </form>
+
+              <form class="margin-bottom">
+                <re-captcha (resolved)="resolved($event)" siteKey="6LeUMq8UAAAAAKO61peKaT7RknpnQe7G5M56hz04">
+                </re-captcha>
+              </form>
+
+              <div class="form-group no-margin">
+
+                <ng-container
+                  *ngIf="(urlImagen | async) || noCargando && captchaVerificado; else registroDeshabilitado">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    Registrarse
+                  </button>
+                </ng-container>
+
+                <ng-template #registroDeshabilitado>
+                  <button type="submit" disabled=true class="btn btn-secondary btn-block">
+                    Registrarse
+                  </button>
+                </ng-template>
+
+              </div>
+              <div class="margin-top20 text-center">
+                Ya tenés una cuenta? <a routerLink="/loguearse">Ingresá</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
