@@ -1,18 +1,22 @@
 @import "src/scss/variables";
-  
-  .notfound {
-    max-width: 767px;
-    width: 100%;
-    line-height: 1.4;
-    text-align: center;
-    padding: 15px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .image{
-    opacity: 0.6;
-  }
-  
+
+.notfound {
+  max-width: 767px;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+  padding: 15px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image{
+  opacity: 0.6;
+}
+
+img{
+  height: 270px;
+}
+

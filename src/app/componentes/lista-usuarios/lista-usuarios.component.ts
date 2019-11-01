@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataApiService } from 'src/app/servicios/DataApi.service';
 import { UsuarioInterface } from 'src/app/clases/Usuario';
 import { MatTableDataSource } from '@angular/material';
+import * as json2csv  from 'json2csv';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-lista-usuarios',
@@ -13,8 +15,11 @@ export class ListaUsuariosComponent implements OnInit {
   displayedColumns: string[] = ['Imágen', 'Nombre', 'Email', 'Perfil', 'Activo'];
   private usuarios: UsuarioInterface[];
   dataSource;
+  public csvFileName = 'Usuarios.csv';
 
-  constructor(private dataApi: DataApiService) { }
+  constructor(
+    private dataApi: DataApiService,
+  ) { }
 
   ngOnInit() {
     this.dataApi.TraerTodos('usuarios')
@@ -36,4 +41,22 @@ export class ListaUsuariosComponent implements OnInit {
     }
   }
 
+  exportar(){
+    return this.generateCSVDownloadLink({
+      data: this.usuarios,
+      columns: [
+        'Nombre',
+        'Email',
+        'Perfil',
+        'Activo'
+      ],
+    });
+  }
+
+  public generateCSVDownloadLink(options: { data: any[], columns: string[] }) {
+    const fields = options.columns;
+    const csv = json2csv.parse(options.data, { fields });
+    var blob = new Blob([csv], {type: 'text/csv' });
+    saveAs(blob, this.csvFileName);
+  }
 }

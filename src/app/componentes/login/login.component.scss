@@ -1,21 +1,9 @@
 .login-pagina {
 	font-size: 14px;
 	margin-top: 40px;
-	margin-bottom: 80px;
 	text-align: center;
 }
 
-.login-pagina .brand {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	margin: 0 auto;
-	margin: 40px auto;
-}
-
-.login-pagina .brand img {
-	width: 100%;
-}
 
 .login-pagina .card-wrapper {
 	width: 400px;
@@ -27,7 +15,8 @@
 }
 
 .login-pagina .card.fat {
-	padding: 10px;
+  padding: 10px;
+  margin-top: 15px;
 }
 
 .login-pagina .card .card-title {
@@ -52,10 +41,6 @@
 
 .login-pagina .no-margin {
 	margin: 0;
-}
-
-img{
-	height: 100px;
 }
 
 .row button{

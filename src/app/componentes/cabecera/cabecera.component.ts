@@ -26,11 +26,16 @@ export class CabeceraComponent implements OnInit {
   cliente = false;
   especialista = false;
 
-  imagenUrl = "";
-  nombre = "";
+  imagenUrl = '';
+  nombre = '';
   perfil: Perfil;
 
-  constructor(private usuarioService: UsuarioService, private dataApi: DataApiService, private http: HttpClient, private ns: NotificationsService) { }
+  constructor(
+    private usuarioService: UsuarioService,
+    private dataApi: DataApiService,
+    private http: HttpClient,
+    private ns: NotificationsService
+  ) { }
 
   ngOnInit() {
     this.TraerUsuarioActual();

@@ -4,18 +4,6 @@
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;
+    min-width: 100%;
     background-color: #6e9de4;
-    color: white;
-    text-align: center;
-}
-
-.btn-social {
-    border-radius: 100%;
-    display: inline-flex;
-    width: 3.25rem;
-    height: 3.25rem;
-    font-size: 1.25rem;
-    justify-content: center;
-    align-items: center;
 }
