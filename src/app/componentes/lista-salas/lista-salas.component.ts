@@ -33,8 +33,4 @@ export class ListaSalasComponent implements OnInit {
       this.consultorios.find(x => x.id == id).Estado = EstadoConsultorio.Ocupado;
     }
   }
-
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
 }
