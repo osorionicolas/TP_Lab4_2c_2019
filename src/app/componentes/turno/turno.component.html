@@ -1,10 +1,17 @@
 <section class="h-100">
-  <div class="container h-100">
-      <div class="row justify-content-md-center h-100 mt-3">
-      <div *ngIf="perfil == 'Especialista'; else showAbm" class="col-md-12">
+    <div class="container h-100">
+        <div class="row justify-content-md-center h-100 mt-3">
+        <div *ngIf="perfil == 'Especialista'; else showAbm" class="col-md-12">
+          <app-turno-lista></app-turno-lista>
+        </div>
+        <ng-template #showAbm>
+          <div class="col-md-4">
+            <app-turno-creacion></app-turno-creacion>
+          </div>
+          <div class="col-md-8">
+            <app-turno-lista></app-turno-lista>
+          </div>
+        </ng-template>
       </div>
-      <ng-template #showAbm>
-      </ng-template>
     </div>
-  </div>
-</section>
+  </section>

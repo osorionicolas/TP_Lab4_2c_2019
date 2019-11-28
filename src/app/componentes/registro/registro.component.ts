@@ -40,7 +40,6 @@ export class RegistroComponent implements OnInit {
     if (this.usuario.Perfil == Perfil.Especialista) {
       this.usuario.Especialidad = Especialidad[(<HTMLInputElement>document.getElementById("especialidad")).value];
     }
-
     this.usuario.Email = this.emailModel;
     this.usuario.Nombre = this.nombreModel;
     this.usuario.Password = this.passwordModel;

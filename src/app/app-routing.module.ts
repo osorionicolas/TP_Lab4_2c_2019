@@ -9,6 +9,9 @@ import { ListaUsuariosComponent } from './componentes/lista-usuarios/lista-usuar
 import { TurnoComponent } from './componentes/turno/turno.component';
 import { ListaSalasComponent } from './componentes/lista-salas/lista-salas.component';
 import { EstadisticasComponent } from './componentes/estadisticas/estadisticas.component';
+import { EstadisticasEmpleadosComponent } from './componentes/estadisticas-empleados/estadisticas-empleados.component';
+import { EstadisticasTurnosComponent } from './componentes/estadisticas-turnos/estadisticas-turnos.component';
+import { EstadisticasEspecialidadesComponent } from './componentes/estadisticas-especialidades/estadisticas-especialidades.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -22,9 +25,9 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
     children:
       [
-        { path: 'empleados', component: InicioComponent },
-        { path: 'turnos', component: InicioComponent },
-        { path: 'especialidades', component: InicioComponent }
+        { path: 'empleados', component: EstadisticasEmpleadosComponent },
+        { path: 'turnos', component: EstadisticasTurnosComponent },
+        { path: 'especialidades', component: EstadisticasEspecialidadesComponent }
       ]
   },
   { path: 'administracion', component: ListaUsuariosComponent, canActivate: [AuthGuardService] },

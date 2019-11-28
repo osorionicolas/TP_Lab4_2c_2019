@@ -5,3 +5,9 @@ Esta aplicación web fue creada para el Trabajo Práctico número 2 de la materi
 Para acceder a la aplicación deben utilizar el siguiente link:
 
 https://buenasonrisa.firebaseapp.com/
+
+<h2>Inicio</h2>
+<img src="https://i.ibb.co/7QxDnyY/inicio.jpg">
+
+<h2>Login</h2>
+<img src="https://i.ibb.co/NNpzC4T/login.png">

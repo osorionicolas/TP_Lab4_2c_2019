@@ -7,7 +7,7 @@ export class BotonSeleccionadoDirective {
 
     @HostBinding('style.backgroundColor') backgroundColor: string;
     @Input() defaultColor: string = 'white';
-    @Input() highlightColor: string = '#6e9de4';
+    @Input() highlightColor: string = 'darkMagenta';
 
     constructor() {
     }

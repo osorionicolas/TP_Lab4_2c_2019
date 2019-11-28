@@ -13,7 +13,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AppComponent } from './app.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
-import { PieComponent } from './componentes/pie/pie.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { Error404Component } from './componentes/error404/error404.component';
@@ -31,13 +30,17 @@ import { EstadisticasComponent } from './componentes/estadisticas/estadisticas.c
 import { HttpClientModule } from '@angular/common/http';
 import { BotonSeleccionadoDirective } from './directivas/boton-seleccionado.directiva';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EstadisticasEspecialidadesComponent } from './componentes/estadisticas-especialidades/estadisticas-especialidades.component';
+import { EstadisticasEmpleadosComponent } from './componentes/estadisticas-empleados/estadisticas-empleados.component';
+import { EstadisticasTurnosComponent } from './componentes/estadisticas-turnos/estadisticas-turnos.component';
+import { TurnoCreacionComponent } from './componentes/turno-creacion/turno-creacion.component';
+import { TurnoListaComponent } from './componentes/turno-lista/turno-lista.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PrincipalComponent,
     CabeceraComponent,
-    PieComponent,
     LoginComponent,
     InicioComponent,
     Error404Component,
@@ -47,6 +50,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ListaSalasComponent,
     EstadisticasComponent,
     BotonSeleccionadoDirective,
+    EstadisticasEspecialidadesComponent,
+    EstadisticasEmpleadosComponent,
+    EstadisticasTurnosComponent,
+    TurnoCreacionComponent,
+    TurnoListaComponent,
   ],
   imports: [
     BrowserModule,

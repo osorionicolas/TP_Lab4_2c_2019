@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
   }
 
   testRecepcionista() {
-    this.emailModel = "pedro@gmail.com";
-    this.passwordModel = "olaquetal";
+    this.emailModel = "recepcionista@gmail.com";
+    this.passwordModel = "123456";
   }
 
   testCliente() {
@@ -40,8 +40,8 @@ export class LoginComponent implements OnInit {
   }
 
   testEspecialista() {
-    this.emailModel = "adolfo@gmail.com";
-    this.passwordModel = "olaquetal";
+    this.emailModel = "especialista@gmail.com";
+    this.passwordModel = "123456";
   }
 
 }

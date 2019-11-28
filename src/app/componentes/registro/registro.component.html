@@ -53,14 +53,12 @@
               <div class="form-group" *ngIf="perfil == 'Especialista'">
                 <label for="especialidad">Especialidad</label>
                 <select class="form-control" name="especialidad" id="especialidad">
-                  <option [ngValue]="Oncologia">Oncología</option>
-                  <option [ngValue]="Dermatologia">Dermatología</option>
-                  <option [ngValue]="Odontologia">Odontología</option>
-                  <option [ngValue]="Psicologia">Psicología</option>
+                  <option value="Oncologia">Oncología</option>
+                  <option value="Dermatologia">Dermatología</option>
+                  <option value="Odontologia">Odontología</option>
+                  <option value="Psicologia">Psicología</option>
                 </select>
               </div>
-
-              <!-- carga de imágen -->
 
               <form class="form-group">
                 <label for="customFile">Imágen</label>
@@ -72,8 +70,6 @@
               </form>
 
               <input #imgUsuario type="hidden" [value]="urlImagen | async">
-
-              <!-- *************** -->
 
               <form class="margin-bottom">
                 <div class="custom-control custom-checkbox">
@@ -95,19 +91,16 @@
                 <ng-container
                   *ngIf="(urlImagen | async) || noCargando && captchaVerificado; else registroDeshabilitado">
                   <button type="submit" class="btn btn-primary btn-block">
-                    Registrarse
+                    Registrar
                   </button>
                 </ng-container>
 
                 <ng-template #registroDeshabilitado>
                   <button type="submit" disabled=true class="btn btn-secondary btn-block">
-                    Registrarse
+                    Registrar
                   </button>
                 </ng-template>
 
-              </div>
-              <div class="margin-top20 text-center">
-                Ya tenés una cuenta? <a routerLink="/loguearse">Ingresá</a>
               </div>
             </form>
           </div>
