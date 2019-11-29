@@ -1,29 +1,19 @@
 <h2>Turnos</h2>
-<h3>Turnos Cancelados por Especialidad</h3>
-<h3>Realizados por Cliente</h3>
-
-<h3>Realizados por Recepcionista</h3>
+<h3>Realizados por Cliente: </h3> {{porCliente?.length}}
+<h3>Realizados por Recepcionista: </h3> {{porRecepcionista?.length}}
 <table border="1">
     <tbody>
-        <colgroup>
-            <col span="2">
-            <col>
-        </colgroup>
         <tr>
             <td><strong>Cantidad de Turnos</strong></td>
-            <td></td>
-        </tr> 
-        <tr>
-            <td><strong>Menos usada</strong></td>
-            <td></td>
+            <td>{{data?.length}}</td>
         </tr> 
         <tr>
             <td><strong>Mejores comentarios</strong></td>
-            <td></td>
+            <td *ngFor="let turno of mejoresComentarios">{{turno.ObservacionesEspecialista}}</td>
         </tr> 
         <tr>
             <td><strong>Peores comentarios</strong></td>
-            <td></td>
+            <td *ngFor="let turno of peoresComentarios">{{turno.ObservacionesEspecialista}}</td>
         </tr> 
     </tbody>
 </table>

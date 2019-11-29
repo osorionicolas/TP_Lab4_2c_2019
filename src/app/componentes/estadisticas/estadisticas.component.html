@@ -1,11 +1,11 @@
 <div class="tables">
-  <button mat-raised-button appBtnSelected routerLink="/estadisticas/empleados">
+  <button mat-raised-button appBtnSelected [highlightColor]="'red'" routerLink="/estadisticas/empleados">
     Empleados
   </button>
-  <button mat-raised-button appBtnSelected routerLink="/estadisticas/turnos">
+  <button mat-raised-button appBtnSelected [highlightColor]="'yellow'" routerLink="/estadisticas/turnos">
     Turnos
   </button>
-  <button mat-raised-button appBtnSelected routerLink="/estadisticas/especialidades">
+  <button mat-raised-button appBtnSelected [highlightColor]="'blue'" routerLink="/estadisticas/especialidades">
     Especialidades
   </button>
   <router-outlet></router-outlet>

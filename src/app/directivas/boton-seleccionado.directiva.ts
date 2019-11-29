@@ -6,8 +6,8 @@ import { Directive, Input, HostListener, HostBinding } from '@angular/core';
 export class BotonSeleccionadoDirective {
 
     @HostBinding('style.backgroundColor') backgroundColor: string;
-    @Input() defaultColor: string = 'white';
-    @Input() highlightColor: string = 'darkMagenta';
+    defaultColor: string = 'white';
+    @Input() highlightColor: string;
 
     constructor() {
     }

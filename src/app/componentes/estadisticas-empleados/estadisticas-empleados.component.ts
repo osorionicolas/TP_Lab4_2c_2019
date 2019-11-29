@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataApiService } from 'src/app/servicios/DataApi.service';
 
 @Component({
   selector: 'app-estadisticas-empleados',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EstadisticasEmpleadosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataApi: DataApiService ) { }
+  data: any;
 
   ngOnInit() {
+    this.dataApi.TraerTodos('logs').subscribe(logs => {
+      this.data = logs;
+    });
   }
 
 }

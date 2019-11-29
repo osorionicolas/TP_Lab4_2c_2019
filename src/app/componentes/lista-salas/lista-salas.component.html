@@ -6,7 +6,7 @@
 
         <ng-container matColumnDef="Codigo">
           <th mat-header-cell *matHeaderCellDef> Código de la Sala </th>
-          <td mat-cell *matCellDef="let element"> {{element.Codigo}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.Codigo | consultorio}} </td>
         </ng-container>
 
         <ng-container matColumnDef="Estado">
@@ -17,12 +17,7 @@
         <ng-container matColumnDef="Ocupar">
           <th mat-header-cell *matHeaderCellDef> Ocupar Consultorio </th>
           <td mat-cell *matCellDef="let element">
-            <div *ngIf="element.Estado != 'Ocupado'; else disableBtn">
-              <button mat-flat-button color="primary" (click)=" ocupar(element.id)">Ocupar</button>
-            </div>
-            <ng-template #disableBtn>
-              <button mat-flat-button color="primary" disabled>Ocupar</button>
-            </ng-template>
+            <button mat-flat-button color="primary" appConsultorioOcupado (click)="ocupar(element.id)">Ocupar</button>
           </td>
         </ng-container>
 

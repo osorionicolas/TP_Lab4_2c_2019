@@ -49,7 +49,9 @@ export class UsuarioService {
                                     usuario.ImagenUrl = userData.photoURL;
                                     usuario.Nombre = userData.displayName;
                                     usuario.Perfil = usuario.Perfil;
-                                    usuario.Especialidad = usuario.Especialidad;
+                                    if(usuario.Especialidad != undefined){
+                                        usuario.Especialidad = usuario.Especialidad;
+                                    }
                                     usuario.Activo = true;
                                     this.router.navigate(['']);
                                     this.db.collection('usuarios').doc(userData.uid).set(usuario).then(() => {

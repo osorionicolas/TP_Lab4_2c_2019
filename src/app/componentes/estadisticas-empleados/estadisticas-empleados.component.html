@@ -4,12 +4,10 @@
         <th>Empleado</th>
         <th>Fecha</th>
         <th>Hora de Ingreso</th>
-        <th>Turnos</th>
     <tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+    <tr *ngFor="let empleado of data">
+        <td>{{empleado?.Empleado}}</td>
+        <td>{{empleado?.Dia}}</td>
+        <td>{{empleado?.Horario}}</td>
     <tr>
 </table>

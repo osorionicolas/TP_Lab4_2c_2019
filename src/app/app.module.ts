@@ -35,6 +35,9 @@ import { EstadisticasEmpleadosComponent } from './componentes/estadisticas-emple
 import { EstadisticasTurnosComponent } from './componentes/estadisticas-turnos/estadisticas-turnos.component';
 import { TurnoCreacionComponent } from './componentes/turno-creacion/turno-creacion.component';
 import { TurnoListaComponent } from './componentes/turno-lista/turno-lista.component';
+import { ConsultorioOcupadoDirective } from './directivas/consultorio-ocupado.directive';
+import { ConsultorioPipe } from './pipes/consultorio.pipe';
+import { ExportarDirective } from './directivas/exportar.directive';
 
 @NgModule({
   declarations: [
@@ -55,6 +58,9 @@ import { TurnoListaComponent } from './componentes/turno-lista/turno-lista.compo
     EstadisticasTurnosComponent,
     TurnoCreacionComponent,
     TurnoListaComponent,
+    ConsultorioOcupadoDirective,
+    ConsultorioPipe,
+    ExportarDirective,
   ],
   imports: [
     BrowserModule,
